@@ -69,6 +69,7 @@ def new_comment():
     return render_template('comment.html', comment_form=form)
 
 @main.route('/blog',methods = ['GET','POST'])
+@login_required
 def new_blog():
     blog_form = BlogForm()
     #blogs = Blog.query.order_by(Blog.title).all()
